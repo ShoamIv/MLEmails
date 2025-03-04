@@ -6,17 +6,15 @@ This project focuses on classifying emails based on their content using Machine 
 
 ## Dataset & Preprocessing
 
-The dataset initially contained approximately 500,000 emails, stored in various folders that served as initial labels. However, we identified that some folders lacked clear semantic focus, leading to inconsistent labeling and dataset imbalance. To improve data quality:
+"The dataset initially contained approximately 500,000 emails, stored in various folders that served as initial labels. However, we identified that some folders lacked clear semantic focus, leading to inconsistent labeling and dataset imbalance. To improve data quality:
 
-We removed generic folders such as "Inbox," "Calendar," and "Junk File", which contained disproportionately large numbers of emails but lacked meaningful distinctions.
+We removed generic folders such as 'Inbox,' 'Calendar,' and 'Junk File,' which contained disproportionately large numbers of emails but lacked meaningful distinctions.
 
 We removed folders with very few emails, as they were unsuitable for training a robust classification model.
 
-The dataset was significantly reduced, dropping from 500,000 emails to 64,512 after these removals.
+The dataset was significantly reduced, dropping from 500,000 emails to 64,512. To address this, we targeted folders with a significant number of emails and related names, combining them into 9 categories that we deemed fitting as labels for the emails. These categories were chosen based on their semantic relevance and the volume of emails they contained, ensuring a more balanced and meaningful dataset for our exploration of email categorization.
 
-To further refine categorization, we combined related folders into eight meaningful categories, ensuring semantic relevance and balance in the dataset.
-
-After this process, we were left with 16,769 emails for final model training.
+After examination, we dropped 2 categories as they lacked semantic relevance, leaving us with 7 categories. The final dataset for model training consisted of 16,769 emails.
 
 ## Emails were preprocessed by:
 
