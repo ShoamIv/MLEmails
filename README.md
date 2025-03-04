@@ -1,6 +1,6 @@
 # Email Classification ML Project
 
-# #Overview
+## Overview
 
 This project focuses on classifying emails based on their content using Machine Learning (ML) techniques. The dataset is derived from the Enron email corpus, and the goal is to assign meaningful categories to emails by analyzing their textual features.
 
