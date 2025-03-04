@@ -1,10 +1,10 @@
-#Email Classification ML Project
+# Email Classification ML Project
 
-##Overview
+# #Overview
 
 This project focuses on classifying emails based on their content using Machine Learning (ML) techniques. The dataset is derived from the Enron email corpus, and the goal is to assign meaningful categories to emails by analyzing their textual features.
 
-##Dataset & Preprocessing
+## Dataset & Preprocessing
 
 The dataset initially contained approximately 500,000 emails, stored in various folders that served as initial labels. However, we identified that some folders lacked clear semantic focus, leading to inconsistent labeling and dataset imbalance. To improve data quality:
 
@@ -18,7 +18,7 @@ To further refine categorization, we combined related folders into eight meaning
 
 After this process, we were left with 16,769 emails for final model training.
 
-##Emails were preprocessed by:
+## Emails were preprocessed by:
 
 Cleaning subject lines.
 
@@ -36,7 +36,7 @@ Singular Value Decomposition (SVD) for improved text feature extraction.
 
 t-Distributed Stochastic Neighbor Embedding (t-SNE) for visualizing high-dimensional folder embeddings.
 
-##Machine Learning Models Used
+## Machine Learning Models Used
 
 To classify emails effectively, we experimented with multiple models:
 
@@ -46,7 +46,7 @@ Regression Model: Applied to predict certain numerical properties of emails base
 
 Singular Value Decomposition (SVD) + ML Classifier: Utilized for reducing text data dimensionality before classification.
 
-##Visualizations
+## Visualizations
 
 To analyze and interpret the dataset, we used:
 
@@ -70,7 +70,7 @@ To address this, we transitioned to using BERT (Bidirectional Encoder Representa
 
 Additionally, BERT generates higher-dimensional vectors, which provide a more nuanced representation of the text. This shift allowed us to better capture the semantic relationships between words and phrases in the emails, ultimately improving the performance of our categorization models.
 
-##Future Improvements
+## Future Improvements
 
 Fine-tuning hyperparameters for better model optimization.
 
