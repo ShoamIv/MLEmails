@@ -60,7 +60,7 @@ Removing noisy folders improved classification accuracy by reducing ambiguity.
 
 Dimensionality reduction techniques helped in better feature extraction and model performance.
 
-The Random Forest model & SVM RBF Kernel Model performed best among the classifiers, balancing accuracy and efficiency.
+SVM RBF Kernel Model performed best among the classifiers, balancing accuracy and efficiency.
 
 We observed that Word2Vec did not provide satisfactory separation or model results for our email categorization task. Upon further research, we discovered that Word2Vec generates word vectors in a way that does not always preserve the semantic meaning of words, especially in contexts where word order and deeper contextual understanding are crucial.
 
