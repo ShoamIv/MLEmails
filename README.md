@@ -30,8 +30,6 @@ To improve model efficiency and visualization, we applied dimensionality reducti
 
 Principal Component Analysis (PCA) to reduce features to 2D and 3D representations.
 
-Singular Value Decomposition (SVD) for improved text feature extraction.
-
 t-Distributed Stochastic Neighbor Embedding (t-SNE) for visualizing high-dimensional folder embeddings.
 
 ## Machine Learning Models Used
