@@ -36,7 +36,12 @@ Principal Component Analysis (PCA) to reduce features to 2D and 3D representatio
 
 t-Distributed Stochastic Neighbor Embedding (t-SNE) for visualizing high-dimensional folder embeddings.
 
-## Features:
+## Labels
+Owing to that the at the emails.csv the emails are alerdy at their respectful folders, we use word embedding on the folders name,
+as we did a lot of manual work, simple example as: combine folders as HR, HR_r into HR.
+eventually we left with 16,769 emails, each one of them belong to his own respectful label.
+
+## Features
 1.Content Length – The total length of the email body.
 
 2.Number of Recipients – The count of recipients in the email.
@@ -52,6 +57,7 @@ Given that our data is not linearly separable and has high dimensionality due to
 
 In contrast, more advanced algorithms, such as Random Forest, are better suited for handling large numbers of dimensions. Their ability to capture intricate patterns and relationships in the data makes them a more promising choice for our classification task. 
 
+
 ## Machine Learning Models Used
 
 To classify emails effectively, we experimented with multiple models:
@@ -64,13 +70,6 @@ Applied to predict certain numerical properties of emails based on extracted fea
 
 ### Support Vector Machine
 Used soft SVM as the soft SVM more robust to noisy data such our own.
-
-# Strategy
-
-///
-///
-//
-///
 
 ## Visualizations
 
