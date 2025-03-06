@@ -47,6 +47,11 @@ t-Distributed Stochastic Neighbor Embedding (t-SNE) for visualizing high-dimensi
 
 For the last two features, we experimented with different embedding techniques. Initially, we used Word2Vec, but the results were not satisfactory. To improve performance, we turned to BERT (Bidirectional Encoder Representations from Transformers). The difference was significant, as demonstrated in the figures.
 
+## Hypothesis
+Given that our data is not linearly separable and has high dimensionality due to the embeddings, simpler models like Logistic Regression may struggle to effectively classify the emails. These models often face difficulties when dealing with complex, high-dimensional feature spaces.
+
+In contrast, more advanced algorithms, such as Random Forest, are better suited for handling large numbers of dimensions. Their ability to capture intricate patterns and relationships in the data makes them a more promising choice for our classification task. 
+
 ## Machine Learning Models Used
 
 To classify emails effectively, we experimented with multiple models:
