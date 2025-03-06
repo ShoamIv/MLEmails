@@ -20,7 +20,7 @@ personal, hr, meetings and scheduling, operations and logistics, projects,corpor
 
 The final dataset for model training consisted of 16,769 emails.
 
-## Emails were preprocessed by:
+# Emails were preprocessed by:
 
 Cleaning subject lines.
 
@@ -35,6 +35,13 @@ To improve model efficiency and visualization, we applied dimensionality reducti
 Principal Component Analysis (PCA) to reduce features to 2D and 3D representations.
 
 t-Distributed Stochastic Neighbor Embedding (t-SNE) for visualizing high-dimensional folder embeddings.
+
+# Features:
+1.Content Length – The total length of the email body.
+2.Number of Recipients – The count of recipients in the email.
+3.Email Subject Embedding – A numerical representation of the email subject.
+4.Email Body Embedding – A numerical representation of the email body.
+For the last two features, we experimented with different embedding techniques. Initially, we used Word2Vec, but the results were not satisfactory. To improve performance, we turned to BERT (Bidirectional Encoder Representations from Transformers). The difference was significant, as demonstrated in the figures.
 
 ## Machine Learning Models Used
 
