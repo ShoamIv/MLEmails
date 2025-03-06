@@ -82,7 +82,7 @@ Seaborn for enhanced scatter plots.
 
 Bar charts to visualize folder distributions before and after data cleaning.
 
-Key Findings & Impact
+## Key Findings & Impact
 
 Removing noisy folders improved classification accuracy by reducing ambiguity.
 
