@@ -20,7 +20,7 @@ personal, hr, meetings and scheduling, operations and logistics, projects,corpor
 
 The final dataset for model training consisted of 16,769 emails.
 
-# Emails were preprocessed by:
+### Emails were preprocessed by:
 
 Cleaning subject lines.
 
@@ -36,7 +36,7 @@ Principal Component Analysis (PCA) to reduce features to 2D and 3D representatio
 
 t-Distributed Stochastic Neighbor Embedding (t-SNE) for visualizing high-dimensional folder embeddings.
 
-# Features:
+## Features:
 1.Content Length – The total length of the email body.
 
 2.Number of Recipients – The count of recipients in the email.
@@ -47,7 +47,7 @@ t-Distributed Stochastic Neighbor Embedding (t-SNE) for visualizing high-dimensi
 
 For the last two features, we experimented with different embedding techniques. Initially, we used Word2Vec, but the results were not satisfactory. To improve performance, we turned to BERT (Bidirectional Encoder Representations from Transformers). The difference was significant, as demonstrated in the figures.
 
-## Hypothesis
+# Hypothesis
 Given that our data is not linearly separable and has high dimensionality due to the embeddings, simpler models like Logistic Regression may struggle to effectively classify the emails. These models often face difficulties when dealing with complex, high-dimensional feature spaces.
 
 In contrast, more advanced algorithms, such as Random Forest, are better suited for handling large numbers of dimensions. Their ability to capture intricate patterns and relationships in the data makes them a more promising choice for our classification task. 
@@ -56,13 +56,13 @@ In contrast, more advanced algorithms, such as Random Forest, are better suited 
 
 To classify emails effectively, we experimented with multiple models:
 
-# Random Forest
+### Random Forest
 Used for classification tasks due to its robustness against overfitting and high interpretability.
 
-# Multi Class Regression Model
+### Multi Class Regression Model
 Applied to predict certain numerical properties of emails based on extracted features.
 
-# Support Vector Machine
+### Support Vector Machine
 Used soft SVM as the soft SVM more robust to noisy data such our own.
 
 
