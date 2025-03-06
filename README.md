@@ -65,6 +65,7 @@ Applied to predict certain numerical properties of emails based on extracted fea
 ### Support Vector Machine
 Used soft SVM as the soft SVM more robust to noisy data such our own.
 
+# Strategy
 
 ## Visualizations
 
