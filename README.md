@@ -67,6 +67,11 @@ Used soft SVM as the soft SVM more robust to noisy data such our own.
 
 # Strategy
 
+///
+///
+//
+///
+
 ## Visualizations
 
 To analyze and interpret the dataset, we used:
