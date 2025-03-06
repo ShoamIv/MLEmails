@@ -1,14 +1,13 @@
 # Email Classification Project
 
-##Introduction
+## Introduction
+This project aims to provide a gateway to a more effective solution for email categorization. Today, most email classification systems focus on broad categories like spam, junk, or promotional emails. However, our goal is to enable a more meaningful categorization—distinguishing between work-related emails, personal messages, and more.
 
-## Overview
-
-This project focuses on classifying emails based on their content using Machine Learning (ML) techniques. The dataset is derived from the Enron email corpus, and the goal is to assign meaningful categories to emails by analyzing their textual features.
+In particular, within the work category, we aim to further refine classification by organizing emails into specific, meaningful subcategories. Using the Enron dataset as our foundation, we focus on developing a structured approach to classify work-related emails into distinct and relevant categories, enhancing both accessibility and efficiency in email management.
 
 ## Dataset & Preprocessing
 
-"The dataset initially contained approximately 500,000 emails, stored in various folders that served as initial labels. However, we identified that some folders lacked clear semantic focus, leading to inconsistent labeling and dataset imbalance. To improve data quality:
+The dataset initially contained approximately 500,000 emails, stored in various folders that served as initial labels. However, we identified that some folders lacked clear semantic focus, leading to inconsistent labeling and dataset imbalance. To improve data quality:
 
 We removed generic folders such as 'Inbox,' 'Calendar,' and 'Junk File,' which contained disproportionately large numbers of emails but lacked meaningful distinctions.
 
@@ -16,7 +15,10 @@ We removed folders with very few emails, as they were unsuitable for training a 
 
 The dataset was significantly reduced, dropping from 500,000 emails to 64,512. To address this, we targeted folders with a significant number of emails and related names, combining them into 9 categories that we deemed fitting as labels for the emails. These categories were chosen based on their semantic relevance and the volume of emails they contained, ensuring a more balanced and meaningful dataset for our exploration of email categorization.
 
-After examination, we dropped 2 categories as they lacked semantic relevance, leaving us with 7 categories. The final dataset for model training consisted of 16,769 emails.
+After examination, we dropped 2 categories: It and  Archive and Miscellaneous folders, as they lacked semantic relevance, leaving us with the following folders as categories:
+personal, hr, meetings and scheduling, operations and logistics, projects,corporate and legal, finance.
+
+The final dataset for model training consisted of 16,769 emails.
 
 ## Emails were preprocessed by:
 
