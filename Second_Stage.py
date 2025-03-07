@@ -50,6 +50,8 @@ def make_vector_rep_df(filtered_emails, word2vec_model):
 
 # Plot t-SNE visualization
 def plot_tsne(folder_embeddings, figure_folder):
+    print (len(folder_embeddings))
+
     tsne = TSNE(n_components=2, perplexity=5, random_state=42)
     tsne_results = tsne.fit_transform(folder_embeddings)
     tsne_df = pd.DataFrame(tsne_results, columns=["TSNE 1", "TSNE 2"], index=folder_embeddings.index)
@@ -132,8 +134,11 @@ def process_and_save_final_data(filtered_emails, word2vec_model_body, word2vec_m
 
 # Main function to execute second stage
 def Run_SecondStage(datastore_path, figure_folder):
+
     filtered_emails = load_filtered_emails(datastore_path)
+    print("Unique folders found:", filtered_emails['X-Folder'].unique())
+
     folder_embeddings, word2vec_model = train_folder_embeddings(filtered_emails, datastore_path)
-    # plot_tsne(folder_embeddings, figure_folder)
+    plot_tsne(folder_embeddings, figure_folder)
     word2vec_model_body, word2vec_model_subject_50 = train_email_embeddings(filtered_emails, datastore_path)
     process_and_save_final_data(filtered_emails, word2vec_model_body, word2vec_model_subject_50, datastore_path)

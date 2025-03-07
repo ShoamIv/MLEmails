@@ -61,10 +61,31 @@ def initiate_stage1(datastore_path, figure_folder):
                        "sent items", "untitled", "notes inbox", "calendar"}
     emails = emails[~emails['X-Folder'].isin(generic_folders)]
 
-    # Merge similar folder names
-    merge_folders = {"personnel": "personal", "personalfolder": "personal", "corporate": "corporate and legal",
-                     "legal": "corporate and legal", "budget": "finance", "market": "finance",
-                     "trading info": "finance", "internet": "it"}
+    # Merge specified similar folder names
+    merge_folders = {
+        "personnel": "personal", "personalfolder": "personal", "personal mail": "personal",
+        "personal stuff": "personal",
+        "personnal": "personal", "human resources": "hr", "netco hr": "hr", "resumes": "hr", "interviews": "hr",
+        "recruiting": "hr", "meetings": "meetings and scheduling", "conferences": "meetings and scheduling",
+        "schedule crawler": "meetings and scheduling", "scheduling": "meetings and scheduling",
+        "tufco": "operations and logistics",
+        "industrial": "operations and logistics", "deal discrepancies": "operations and logistics",
+        "logistics": "operations and logistics",
+        "retail": "operations and logistics", "mckinsey project": "projects", "project stanley": "projects",
+        "corporate": "corporate and legal", "regulatory": "corporate and legal", "netco legal": "corporate and legal",
+        "federal legislation": "corporate and legal", "federal legis.": "corporate and legal",
+        "legal": "corporate and legal",
+        "corp info_announcements": "corporate and legal", "legal agreements": "corporate and legal",
+        "corporate comm": "corporate and legal", "archives": "archive and miscellaneous",
+        "junk": "archive and miscellaneous",
+        "e-mail bin": "archive and miscellaneous", "old inbox": "archive and miscellaneous",
+        "misc": "archive and miscellaneous",
+        "miscellaneous": "archive and miscellaneous", "misc tw": "archive and miscellaneous",
+        "misc.": "archive and miscellaneous",
+        "online trading": "finance", "market": "finance", "mrkt info": "finance", "credit derivatives": "finance",
+        "tradecounts": "finance", "trading info": "finance", "2002 budget": "finance", "budget": "finance",
+        "broker quotes": "finance", "kpmg": "finance", "palo alto": "it", "internet": "it", "internet sites": "it"
+    }
     emails['X-Folder'] = emails['X-Folder'].replace(merge_folders)
 
     # Filter relevant folders
