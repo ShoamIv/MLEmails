@@ -50,8 +50,6 @@ def make_vector_rep_df(filtered_emails, word2vec_model):
 
 # Plot t-SNE visualization
 def plot_tsne(folder_embeddings, figure_folder):
-    print (len(folder_embeddings))
-
     tsne = TSNE(n_components=2, perplexity=5, random_state=42)
     tsne_results = tsne.fit_transform(folder_embeddings)
     tsne_df = pd.DataFrame(tsne_results, columns=["TSNE 1", "TSNE 2"], index=folder_embeddings.index)
