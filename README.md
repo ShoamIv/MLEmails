@@ -173,6 +173,7 @@ Data Cleaning: Implement more rigorous data cleaning techniques to handle missin
 
 Feature Engineering: Create more informative features that can enhance model performance.
 
-![T-SNE_BERT](https://github.com/user-attachments/assets/48bcffd1-35d8-4c47-86f5-125ed60db05c)
 
+![PC![PCA_Word2Vec](https://github.com/user-attachments/assets/3d26574f-7e65-445f-80bd-c0e4ae473e5c)
+A_BERT](https://github.com/user-attachments/assets/f70cbd18-3797-48f1-b38a-a05df64bc376)
 
