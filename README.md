@@ -85,7 +85,14 @@ For the last two features, we experimented with different embedding techniques. 
   <img src="Figure/BERT2DPCA.png" width="45%" style="display: inline-block;" />
 </p>
 
-as we can see 
+BERT embeddings demonstrate superior clustering of email data compared to Word2Vec, with more distinct and meaningful groupings visible in the PCA visualization. While Word2Vec shows scattered, overlapping distributions, BERT's contextual understanding creates clearer separation between categories, particularly for label 2, suggesting it captures more nuanced semantic relationships in email content.
+
+<p align="center">
+  <img src="Figure/Word2Vec3DPCA.png" width="45%" style="display: inline-block;" />
+  <img src="Figure/BERT3DPCA.png" width="45%" style="display: inline-block;" />
+</p>
+
+The addition of a third dimension in PCA visualization further highlights the differences between embedding techniques. In the 3D space, Word2Vec (Image 1) continues to show predominantly scattered data with orange label 0 dominating, while the BERT visualization (Image 2) reveals even more distinct separation between clusters, particularly for the red label 2 points which form a cohesive region with some outlier groups. This enhanced separability in three dimensions reinforces BERT's superior ability to capture semantic relationships in email data, as the contextual embeddings maintain their structural integrity across multiple principal components, suggesting BERT would likely provide better performance for downstream classification tasks.
 
 # Hypothesis
 Given that our data is not linearly separable and has high dimensionality due to the embeddings, simpler models like Logistic Regression may struggle to effectively classify the emails. These models often face difficulties when dealing with complex, high-dimensional feature spaces.
