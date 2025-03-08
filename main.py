@@ -13,16 +13,16 @@ def main():
     figure_folder = "Figure"
 
     print("Start processing the data...")
-    #preprocess_data(datastore_path, figure_folder, )
+    preprocess_data(datastore_path, figure_folder, )
 
     print("Initiating Word2Vec Embedding...")
-    #initiate_word2vec(datastore_path, figure_folder)
+    initiate_word2vec(datastore_path, figure_folder)
 
     file = "final_emails_50.csv"
 
     print("\nInitiating Word2Vec PCA and T-SNE...")
-    #pca(datastore_path, figure_folder, file, "Word2Vec")
-    #tsne(datastore_path, figure_folder, file, "T-SNE_Word2Vec.png")
+    pca(datastore_path, figure_folder, file, "Word2Vec")
+    tsne(datastore_path, figure_folder, file, "T-SNE_Word2Vec.png")
 
     # Algorithms run on Word2Vec
 
@@ -40,12 +40,12 @@ def main():
 
     print("\nInitiating BERT PCA and T-SNE...")
 
-    #pca(datastore_path, figure_folder, file, "BERT")
-    #tsne(datastore_path, figure_folder, file, "T-SNE_BERT.png")
+    pca(datastore_path, figure_folder, file, "BERT")
+    tsne(datastore_path, figure_folder, file, "T-SNE_BERT.png")
 
     # Bert model
     print("\nTraining On Bert Model...")
-    #Run_BertEmbedding(datastore_path, figure_folder)
+    Run_BertEmbedding(datastore_path, figure_folder)
 
     # Algorithms run on Bert
 
