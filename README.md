@@ -124,8 +124,6 @@ We observed that Word2Vec did not provide satisfactory separation or model resul
 
 To address this, we transitioned to using BERT (Bidirectional Encoder Representations from Transformers) for vectorizing the email text. Unlike Word2Vec, BERT captures the contextual meaning of words by considering the entire sentence structure, resulting in richer and more semantically meaningful embeddings.
 
-Additionally, BERT generates higher-dimensional vectors, which provide a more nuanced representation of the text. This shift allowed us to better capture the semantic relationships between words and phrases in the emails, ultimately improving the performance of our categorization models.
-
 ## Future Improvements
 
 ### Diversify Data Sources
