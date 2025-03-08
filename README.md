@@ -92,7 +92,7 @@ BERT embeddings demonstrate superior clustering of email data compared to Word2V
   <img src="Figure/BERT3DPCA.png" width="45%" style="display: inline-block;" />
 </p>
 
-The addition of a third dimension in PCA visualization further highlights the differences between embedding techniques. In the 3D space, Word2Vec (Image 1) continues to show predominantly scattered data with orange label 0 dominating, while the BERT visualization (Image 2) reveals even more distinct separation between clusters, particularly for the red label 2 points which form a cohesive region with some outlier groups. This enhanced separability in three dimensions reinforces BERT's superior ability to capture semantic relationships in email data, as the contextual embeddings maintain their structural integrity across multiple principal components, suggesting BERT would likely provide better performance for downstream classification tasks.\
+The addition of a third dimension in PCA visualization further highlights the differences between embedding techniques. In the 3D space, Word2Vec (Image 1) continues to show predominantly scattered data with orange label 0 dominating, while the BERT visualization (Image 2) reveals even more distinct separation between clusters, particularly for the red label 2 points which form a cohesive region with some outlier groups. This enhanced separability in three dimensions reinforces BERT's superior ability to capture semantic relationships in email data, as the contextual embeddings maintain their structural integrity across multiple principal components, suggesting BERT would likely provide better performance for downstream classification tasks.
 
 <p align="center">
   <img src="Figure/T-SNE_Word2Vec.png" width="45%" style="display: inline-block;" />
@@ -102,9 +102,13 @@ The addition of a third dimension in PCA visualization further highlights the di
 As we have observed, the t-SNE technique does not break the insights from the PCA analysis; instead, it reinforces them.
 
 # Hypothesis
-Given that our data is not linearly separable and has high dimensionality due to the embeddings, simpler models like Logistic Regression may struggle to effectively classify the emails. These models often face difficulties when dealing with complex, high-dimensional feature spaces.
 
-In contrast, more advanced algorithms, such as SVM using RBF kernel, are better suited for handling large numbers of dimensions. Their ability to capture intricate patterns and relationships in the data makes them a more promising choice for our classification task. 
+The t-SNE and PCA visualizations reveal the inherent complexity of our email embedding space. As we compare Word2Vec and BERT representations through both dimensionality reduction techniques, a clear pattern emerges. The data exhibits significant non-linear characteristics with intricate cluster structures that resist simple separation.
+BERT embeddings consistently demonstrate superior cluster formation compared to Word2Vec, with more defined boundaries between email categories. This is particularly evident in the t-SNE visualizations, where BERT's contextual understanding creates distinctive satellite clusters for category 2 (red) and clearer separation for other categories. Word2Vec, while showing some clustering tendencies, produces more overlapping distributions with less defined category boundaries.
+Model Selection Implications
+Given the non-linear separability and high dimensionality of these embeddings, simpler models like Logistic Regression would indeed struggle to establish effective decision boundaries. The complex interrelationships between data points require algorithms capable of modeling non-linear patterns across multiple dimensions.
+SVM with RBF kernel stands as a more promising approach, as it can project the data into higher-dimensional spaces to find separation planes invisible in the original feature space. Its ability to capture intricate patterns makes it well-suited for classifying the semantically rich representations that BERT produces.
+These visualizations strongly suggest that leveraging BERT embeddings with non-linear classifiers would yield the most effective email categorization system, capitalizing on both the quality of the representation and the classifier's ability to establish appropriate decision boundaries in complex feature spaces
 
 
 ## Machine Learning Models Used
