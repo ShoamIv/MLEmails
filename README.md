@@ -47,7 +47,7 @@ The final categories, which now serve as our labels, are as follows:
 
 7.Projects
 
-These labels provide a structured framework for analysis, enabling us to derive actionable insights and build robust machine learning models. Each of the 16,769 emails was assigned to one of these categories, ensuring that every email is associated with a clear and meaningful label. These labels not only reflect the content and context of the emails but also serve as the foundation for supervised learning tasks, such as classification and clustering.
+These labels provide a structured framework for analysis, enabling us to derive actionable insights and build robust machine learning models. Each of the 14,081 emails was assigned to one of these categories, ensuring that every email is associated with a clear and meaningful label. These labels not only reflect the content and context of the emails but also serve as the foundation for supervised learning tasks, such as classification and clustering.
 
 ### Why These Labels?
 
