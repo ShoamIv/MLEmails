@@ -1,15 +1,15 @@
 import os
-import numpy as np
-import pandas as pd
+
 import matplotlib.pyplot as plt
+import pandas as pd
 import seaborn as sns
 from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report, ConfusionMatrixDisplay
 from sklearn.model_selection import train_test_split
+from sklearn.multiclass import OneVsRestClassifier
 from sklearn.preprocessing import StandardScaler
 from sklearn.svm import LinearSVC, SVC
-from sklearn.multiclass import OneVsRestClassifier
 
 
 def train_SVM(datastore_path, figure_folder):
@@ -53,6 +53,7 @@ def train_SVM(datastore_path, figure_folder):
     disp.plot(cmap=plt.cm.Blues)
     plt.title('Linear SVM Confusion Matrix')
     plt.savefig(os.path.join(figure_folder, "SVM_confusion_matrix.png"), bbox_inches="tight")
+    plt.close()
 
     # Print the classification report
     print("Classification Report:")
@@ -70,6 +71,7 @@ def train_SVM(datastore_path, figure_folder):
     plt.title('Linear SVM Model Accuracy')
     plt.ylabel('Accuracy')
     plt.savefig(os.path.join(figure_folder, "SVM_accuracy.png"), bbox_inches="tight")
+    plt.close()
 
     # Train RBF Kernel SVM
     print("Training RBF Kernel SVM model...")
@@ -91,6 +93,7 @@ def train_SVM(datastore_path, figure_folder):
     disp_rbf.plot(cmap=plt.cm.Blues)
     plt.title('RBF Kernel SVM Confusion Matrix')
     plt.savefig(os.path.join(figure_folder, "SVM_RBF_confusion_matrix.png"), bbox_inches="tight")
+    plt.close()
 
     # Print the classification report for RBF
     print("RBF Classification Report:")
@@ -108,6 +111,7 @@ def train_SVM(datastore_path, figure_folder):
     plt.title('SVM Models Accuracy Comparison')
     plt.ylabel('Accuracy')
     plt.savefig(os.path.join(figure_folder, "SVM_comparison.png"), bbox_inches="tight")
+    plt.close()
 
     # Similar to the logistic regression: PCA visualization
     # Standardize and reduce to 2D using PCA
@@ -127,6 +131,7 @@ def train_SVM(datastore_path, figure_folder):
     plt.legend(title="Label")
     plt.grid(True)
     plt.savefig(os.path.join(figure_folder, "SVM_PCA_sns.png"), bbox_inches="tight")
+    plt.close()
 
     # Apply PCA for dimensionality reduction (50 components)
     pca = PCA(n_components=50, random_state=42)
@@ -152,4 +157,4 @@ def train_SVM(datastore_path, figure_folder):
     plt.legend(title="Email Category")
     plt.grid(True)
     plt.savefig(os.path.join(figure_folder, "SVM_t-SNE.png"), bbox_inches="tight")
-
+    plt.close()
