@@ -92,12 +92,19 @@ BERT embeddings demonstrate superior clustering of email data compared to Word2V
   <img src="Figure/BERT3DPCA.png" width="45%" style="display: inline-block;" />
 </p>
 
-The addition of a third dimension in PCA visualization further highlights the differences between embedding techniques. In the 3D space, Word2Vec (Image 1) continues to show predominantly scattered data with orange label 0 dominating, while the BERT visualization (Image 2) reveals even more distinct separation between clusters, particularly for the red label 2 points which form a cohesive region with some outlier groups. This enhanced separability in three dimensions reinforces BERT's superior ability to capture semantic relationships in email data, as the contextual embeddings maintain their structural integrity across multiple principal components, suggesting BERT would likely provide better performance for downstream classification tasks.
+The addition of a third dimension in PCA visualization further highlights the differences between embedding techniques. In the 3D space, Word2Vec (Image 1) continues to show predominantly scattered data with orange label 0 dominating, while the BERT visualization (Image 2) reveals even more distinct separation between clusters, particularly for the red label 2 points which form a cohesive region with some outlier groups. This enhanced separability in three dimensions reinforces BERT's superior ability to capture semantic relationships in email data, as the contextual embeddings maintain their structural integrity across multiple principal components, suggesting BERT would likely provide better performance for downstream classification tasks.\
+
+<p align="center">
+  <img src="Figure/T-SNE_Word2Vec.png" width="45%" style="display: inline-block;" />
+  <img src="Figure/T-SNE_BERT" width="45%" style="display: inline-block;" />
+</p>
+
+As we have observed, the t-SNE technique does not break the assumptions we initially built from the PCA analysis; instead, it reinforces them.
 
 # Hypothesis
 Given that our data is not linearly separable and has high dimensionality due to the embeddings, simpler models like Logistic Regression may struggle to effectively classify the emails. These models often face difficulties when dealing with complex, high-dimensional feature spaces.
 
-In contrast, more advanced algorithms, such as SVM, are better suited for handling large numbers of dimensions. Their ability to capture intricate patterns and relationships in the data makes them a more promising choice for our classification task. 
+In contrast, more advanced algorithms, such as SVM using RBF kernel, are better suited for handling large numbers of dimensions. Their ability to capture intricate patterns and relationships in the data makes them a more promising choice for our classification task. 
 
 
 ## Machine Learning Models Used
