@@ -168,7 +168,5 @@ Data Cleaning: Implement more rigorous data cleaning techniques to handle missin
 
 Feature Engineering: Create more informative features that can enhance model performance.
 
-Data Augmentation: Use techniques like SMOTE (Synthetic Minority Over-sampling Technique) to handle imbalanced datasets.
-
 
 
