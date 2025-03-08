@@ -2,9 +2,6 @@ import os
 
 import matplotlib.pyplot as plt
 import pandas as pd
-import seaborn as sns
-from sklearn.decomposition import PCA
-from sklearn.manifold import TSNE
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report, ConfusionMatrixDisplay
 from sklearn.model_selection import train_test_split
 from sklearn.multiclass import OneVsRestClassifier
@@ -12,9 +9,10 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.svm import LinearSVC, SVC
 
 
-def train_SVM(datastore_path, figure_folder):
+def train_SVM(datastore_path, figure_folder, file):
+
     # Load your DataFrame here
-    df = pd.read_csv(f"{datastore_path}/final_emails_50.csv")
+    df = pd.read_csv(f"{datastore_path}/{file}")
 
     # Extract features and labels
     X = df.drop(columns=['label'])  # Features: all except 'label'
@@ -111,50 +109,4 @@ def train_SVM(datastore_path, figure_folder):
     plt.title('SVM Models Accuracy Comparison')
     plt.ylabel('Accuracy')
     plt.savefig(os.path.join(figure_folder, "SVM_comparison.png"), bbox_inches="tight")
-    plt.close()
-
-    # Similar to the logistic regression: PCA visualization
-    # Standardize and reduce to 2D using PCA
-    X_standardized = scaler.fit_transform(X)
-    X_reduced = PCA(n_components=2).fit_transform(X_standardized)
-
-    # Convert to a DataFrame for visualization
-    df_pca = pd.DataFrame(X_reduced, columns=['PC1', 'PC2'])
-    df_pca['Label'] = y  # Add labels
-
-    # Create a scatter plot for PCA
-    plt.figure(figsize=(8, 6))
-    sns.scatterplot(x='PC1', y='PC2', hue=df_pca['Label'].astype(str), palette='viridis', data=df_pca, alpha=0.7)
-    plt.title("PCA Visualization of Email Data")
-    plt.xlabel("Principal Component 1")
-    plt.ylabel("Principal Component 2")
-    plt.legend(title="Label")
-    plt.grid(True)
-    plt.savefig(os.path.join(figure_folder, "SVM_PCA_sns.png"), bbox_inches="tight")
-    plt.close()
-
-    # Apply PCA for dimensionality reduction (50 components)
-    pca = PCA(n_components=50, random_state=42)
-    X_pca = pca.fit_transform(X_standardized)
-
-    # Apply t-SNE for further reduction to 2D
-    tsne = TSNE(n_components=2, perplexity=30, random_state=42, init="random", learning_rate=200)
-    X_tsne = tsne.fit_transform(X_pca)
-
-    # Create DataFrame for t-SNE visualization
-    df_tsne = pd.DataFrame(X_tsne, columns=["TSNE1", "TSNE2"])
-    df_tsne["Label"] = y
-
-    # Create a scatter plot for t-SNE
-    plt.figure(figsize=(8, 6))
-    for label in df_tsne["Label"].unique():
-        subset = df_tsne[df_tsne["Label"] == label]
-        plt.scatter(subset["TSNE1"], subset["TSNE2"], label=str(label), alpha=0.7)
-
-    plt.title("t-SNE Visualization of Email Data (Standardized + PCA Preprocessing)")
-    plt.xlabel("t-SNE Component 1")
-    plt.ylabel("t-SNE Component 2")
-    plt.legend(title="Email Category")
-    plt.grid(True)
-    plt.savefig(os.path.join(figure_folder, "SVM_t-SNE.png"), bbox_inches="tight")
     plt.close()
