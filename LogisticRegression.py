@@ -1,24 +1,21 @@
 import os
-import pandas as pd
-import numpy as np
+
+import keras
 import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
 import seaborn as sns
 from sklearn.decomposition import PCA
+from sklearn.manifold import TSNE
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
-from sklearn.manifold import TSNE
-import tensorflow as tf
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense
-from tensorflow.keras.optimizers import Adam
-from tensorflow.keras.utils import to_categorical
 
 
 # Function to train Logistic Regression model
-def train_logistic_regression(datastore_path, figure_folder):
+def train_logistic_regression(datastore_path, file, figure_folder):
     # Load your DataFrame here
-    df = pd.read_csv(f"{datastore_path}/final_emails_50.csv")
+    df = pd.read_csv(f"{datastore_path}/{file}")
 
     # Extract features and labels
     X = df.drop(columns=['label'])  # Features: all except 'label'
@@ -33,23 +30,23 @@ def train_logistic_regression(datastore_path, figure_folder):
     X_test = scaler.transform(X_test)
 
     # Convert integer labels to one-hot encoded labels
-    y_train = to_categorical(y_train, num_classes=9)
-    y_test = to_categorical(y_test, num_classes=9)
+    y_train = keras.utils.to_categorical(y_train, num_classes=7)
+    y_test = keras.utils.to_categorical(y_test, num_classes=7)
 
     # Define the logistic regression model
-    model = Sequential()
-    # Fix: Use the correct import for Dense layer
-    model.add(Dense(9, activation='softmax', input_shape=(X_train.shape[1],)))  # Corrected input_shape parameter
+    model = keras.Sequential()
+    model.add(
+        keras.layers.Dense(7, activation='softmax', input_shape=(X_train.shape[1],)))  # Corrected input_shape parameter
 
     # Create an Adam optimizer with a custom learning rate
-    optimizer = Adam(learning_rate=0.0001)
+    optimizer = keras.optimizers.Adam(learning_rate=0.0001)
 
     # Compile the model
     model.compile(optimizer=optimizer, loss='categorical_crossentropy', metrics=['accuracy'])
 
     # Define batch size and number of epochs
     batch_size = 100
-    epochs = 130
+    epochs = 112
 
     # Train the model with mini-batches
     history = model.fit(X_train, y_train, batch_size=batch_size, epochs=epochs, validation_data=(X_test, y_test))
@@ -69,6 +66,7 @@ def train_logistic_regression(datastore_path, figure_folder):
     ax.set_ylabel('Loss')
     ax.legend()
     plt.savefig(os.path.join(figure_folder, "LG_loss.png"), bbox_inches="tight")
+    plt.close()
 
     # Standardize and reduce to 2D using PCA
     X_standardized = scaler.fit_transform(X)
@@ -87,6 +85,7 @@ def train_logistic_regression(datastore_path, figure_folder):
     plt.legend(title="Label")
     plt.grid(True)
     plt.savefig(os.path.join(figure_folder, "LG_PCA_sns.png"), bbox_inches="tight")
+    plt.close()
 
     # Reduce to 2D for static visualization
     X_reduced_2d = PCA(n_components=2).fit_transform(X_standardized)
@@ -105,6 +104,7 @@ def train_logistic_regression(datastore_path, figure_folder):
     plt.legend(title="Label")
     plt.grid(True)
     plt.savefig(os.path.join(figure_folder, "LG_PCA.png"), bbox_inches="tight")
+    plt.close()
 
     # Apply PCA for dimensionality reduction (50 components)
     pca = PCA(n_components=50, random_state=42)
@@ -130,3 +130,4 @@ def train_logistic_regression(datastore_path, figure_folder):
     plt.legend(title="Email Category")
     plt.grid(True)
     plt.savefig(os.path.join(figure_folder, "LG_t-SNE.png"), bbox_inches="tight")
+    plt.close()
