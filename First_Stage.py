@@ -55,6 +55,7 @@ def initiate_stage1(datastore_path, figure_folder):
     plt.gca().invert_yaxis()
     plt.grid(axis='x', linestyle='--', alpha=0.7)
     plt.savefig(os.path.join(figure_folder, "email_Top_40_Folder.png"), bbox_inches="tight")
+    plt.close()
 
     # Remove generic folders
     generic_folders = {"inbox", "sent", "deleted items", "drafts", "all documents", "discussion threads",
@@ -93,14 +94,13 @@ def initiate_stage1(datastore_path, figure_folder):
                        "corporate and legal", "finance"]
     emails = emails[emails['X-Folder'].isin(folders_to_keep)]
 
+    # Final cleaning: remove empty subjects
+    emails = emails[emails['Subject'].notna() & (emails['Subject'] != "")]
+
     # Save the filtered emails
     filtered_path = os.path.join(datastore_path, "filtered_emails.csv")
     emails.to_csv(filtered_path, index=False)
     print("Filtered CSV saved as 'filtered_emails.csv'")
-
-    # Final cleaning: remove empty subjects and archive-related folders
-    emails = emails[emails['Subject'].notna() & (emails['Subject'] != "")]
-    emails = emails[~emails['X-Folder'].isin(["it", "archive and miscellaneous"])]
 
     # Plot folder occurrences after cleaning
     folder_counts = emails['X-Folder'].value_counts().reset_index()
@@ -113,6 +113,7 @@ def initiate_stage1(datastore_path, figure_folder):
     plt.gca().invert_yaxis()
     plt.grid(axis='x', linestyle='--', alpha=0.7)
     plt.savefig(os.path.join(figure_folder, "folder_occurrences_afterClean.png"), bbox_inches="tight")
+    plt.close()
 
 
 def Run_FirstStage(datastore_path, figure_folder):
