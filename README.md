@@ -115,8 +115,9 @@ Seaborn for enhanced scatter plots.
 
 Bar charts to visualize folder distributions before and after data cleaning.
 
-add here how each performed with direction to the respected figure's
 ## Key Findings & Impact
+
+add here how each performed with direction to the respected figure's
 
 ### Multi Class Logistic Regression
 
