@@ -99,13 +99,17 @@ In contrast, more advanced algorithms, such as Random Forest, are better suited 
 To classify emails effectively, we experimented with multiple models:
 
 ### Multi Class Logistic Regression
-Applied to predict certain numerical properties of emails based on extracted features.
+
+Multi-class Logistic Regression is expected to underperform compared to other models due to the high dimensionality of our dataset and the lack of clearly separable classes. Given the complex nature of our features, linear decision boundaries may struggle to capture meaningful distinctions between categories, leading to suboptimal classification performance.
 
 ### Random Forest
-Used for classification tasks due to its robustness against overfitting and high interpretability.
+
+Random Forest is expected to perform well due to its ability to handle high-dimensional data and capture complex decision boundaries. By aggregating multiple decision trees, it reduces overfitting and improves generalization. Additionally, its ensemble nature helps mitigate the impact of noisy or overlapping data, making it a strong candidate for classification in our dataset.
 
 ### Support Vector Machine
-Used soft SVM as the soft SVM more robust to noisy data such our own.
+
+Support Vector Machines (SVM) are expected to perform reasonably well, especially with the right kernel choice.
+Given our high-dimensional data, SVM with a nonlinear kernel (such as RBF) can effectively capture complex decision boundaries by mapping the data into a higher-dimensional space where it becomes more separable. The RBF kernel transforms the input space using a similarity measure based on distance, allowing it to handle intricate patterns that a linear kernel would struggle with. This makes it particularly useful when class distributions overlap or when relationships between features are highly nonlinear.
 
 
 ## Key Findings & Impact
@@ -114,7 +118,9 @@ add here how each performed with direction to the respected figure's
 
 ### Multi Class Logistic Regression
 
+
 ### Random Forest
+perform 
 
 ### Support Vector Machine
 
