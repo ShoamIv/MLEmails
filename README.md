@@ -115,13 +115,15 @@ Seaborn for enhanced scatter plots.
 
 Bar charts to visualize folder distributions before and after data cleaning.
 
+add here how each performed with direction to the respected figure's
 ## Key Findings & Impact
 
-Removing noisy folders improved classification accuracy by reducing ambiguity.
+### Multi Class Logistic Regression
 
-Dimensionality reduction techniques helped in better feature extraction and model performance.
+### Random Forest
 
-SVM RBF Kernel Model performed best among the classifiers, balancing accuracy and efficiency.
+### Support Vector Machine
+
 
 We observed that Word2Vec did not provide satisfactory separation or model results for our email categorization task. Upon further research, we discovered that Word2Vec generates word vectors in a way that does not always preserve the semantic meaning of words, especially in contexts where word order and deeper contextual understanding are crucial.
 
