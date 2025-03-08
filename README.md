@@ -37,9 +37,43 @@ Principal Component Analysis (PCA) to reduce features to 2D and 3D representatio
 t-Distributed Stochastic Neighbor Embedding (t-SNE) for visualizing high-dimensional folder embeddings.
 
 ## Labels
-Owing to that the at the emails.csv the emails are alerdy at their respectful folders, we use word embedding on the folders name,
-as we did a lot of manual work, simple example as: combine folders as HR, HR_r into HR.
-eventually we left with 16,769 emails, each one of them belong to his own respectful label.
+Owing to the fact that the emails in emails.csv are already organized into their respective folders, we leveraged word embeddings on the folder names to enhance our analysis. This approach was particularly effective because the folder names inherently capture the context and categorization of the emails. To streamline the process, we performed significant manual work to consolidate similar folders. For instance, folders like HR, HR_r, and HR_recruiting were combined into a single category, HR.
+This approach not only preserved the organizational structure of the emails but also allowed us to leverage the semantic meaning embedded in the folder names, providing a robust foundation for our machine learning pipeline.
+The final categories, which now serve as our labels, are as follows:
+
+1.Personal
+
+2.Operations and Logistics
+
+3.Corporate and Legal
+
+4.Finance
+
+5.HR
+
+6.Meetings and Scheduling
+
+7.Projects
+
+These labels provide a structured framework for analysis, enabling us to derive actionable insights and build robust machine learning models. Each of the 16,769 emails was assigned to one of these categories, ensuring that every email is associated with a clear and meaningful label. These labels not only reflect the content and context of the emails but also serve as the foundation for supervised learning tasks, such as classification and clustering.
+
+### Why These Labels?
+
+Personal: Emails related to individual or non-work-related communication.
+
+Operations and Logistics: Emails concerning supply chain, logistics, and operational workflows.
+
+Corporate and Legal: Emails involving legal matters, compliance, and corporate governance.
+
+Finance: Emails related to budgeting, trading, and financial operations.
+
+HR: Emails pertaining to recruitment, employee relations, and human resources management.
+
+Meetings and Scheduling: Emails about meeting coordination, calendars, and scheduling.
+
+Projects: Emails tied to specific initiatives, project management, and collaborative efforts.
+
+By using these categories as labels, we ensure that our dataset is not only well-organized but also primed for advanced analytical tasks, such as predictive modeling and semantic analysis. This approach allows us to leverage the inherent structure of the data while maintaining its contextual richness.
 
 ## Features
 1.Content Length – The total length of the email body.
