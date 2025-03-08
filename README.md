@@ -78,6 +78,17 @@ By using these categories as labels, we ensure that our dataset is not only well
 
 For the last two features, we experimented with different embedding techniques. Initially, we used Word2Vec, but the results were not satisfactory. To improve performance, we turned to BERT (Bidirectional Encoder Representations from Transformers). The difference was significant, as demonstrated in the figures.
 
+## Visualizations
+
+To analyze and interpret the dataset, we used:
+
+Matplotlib for static visualizations.
+
+Seaborn for enhanced scatter plots.
+
+Bar charts to visualize folder distributions before and after data cleaning.
+
+
 # Hypothesis
 Given that our data is not linearly separable and has high dimensionality due to the embeddings, simpler models like Logistic Regression may struggle to effectively classify the emails. These models often face difficulties when dealing with complex, high-dimensional feature spaces.
 
@@ -97,15 +108,6 @@ Used for classification tasks due to its robustness against overfitting and high
 ### Support Vector Machine
 Used soft SVM as the soft SVM more robust to noisy data such our own.
 
-## Visualizations
-
-To analyze and interpret the dataset, we used:
-
-Matplotlib for static visualizations.
-
-Seaborn for enhanced scatter plots.
-
-Bar charts to visualize folder distributions before and after data cleaning.
 
 ## Key Findings & Impact
 
