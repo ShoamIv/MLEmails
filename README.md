@@ -119,6 +119,13 @@ Its ability to capture intricate patterns makes it well-suited for classifying t
 
 These visualizations strongly suggest that leveraging BERT embeddings with non-linear classifiers would yield the most effective email categorization system, capitalizing on both the quality of the representation and the classifier's ability to establish appropriate decision boundaries in complex feature spaces
 
+A significant challenge emerges when examining the "Personal" category within our email classification framework. Unlike work-specific categories with distinctive terminology and contexts, personal communications encompass a wide spectrum of topics and language patterns.
+
+This breadth of content creates substantial overlap with other categories in the embedding space.
+
+We anticipate that classifiers will face particular difficulty establishing clear boundaries around the personal category, potentially misclassifying work-related emails that contain casual language or general topics.
+
+This classification uncertainty represents a significant challenge that may reduce overall model performance, even when using BERT's superior embeddings with advanced non-linear classifiers.
 
 ## Machine Learning Models Used
 To classify emails effectively, we experimented with multiple models:
