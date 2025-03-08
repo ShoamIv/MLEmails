@@ -134,6 +134,48 @@ Additionally, BERT generates higher-dimensional vectors, which provide a more nu
 
 ## Future Improvements
 
-Fine-tuning hyperparameters for better model optimization.
+### Diversify Data Sources
+Expand Data Collection: Currently, we rely on the Ernon dataset, which primarily consists of business corporate data. To achieve a more comprehensive understanding, we should incorporate data from various sectors such as:
 
-Expanding the dataset with external corpora to enhance model generalizability.
+Universities: Academic and research data.
+
+Hospitals: Healthcare and medical records.
+
+Construction: Infrastructure and project-related data.
+
+Other Fields: Include data from retail, technology, agriculture, and more.
+
+Categorize Jobs: By integrating data from multiple sectors, we can better categorize and analyze job roles across different industries.
+
+### Integrate Advanced Algorithms
+Explore Complex Models: While we have utilized algorithms like Random Forest, DBSCAN, Logistic Regression (LG), and Support Vector Machines (SVM), there is potential to integrate more sophisticated models such as:
+
+Gradient Boosting Machines (GBM): For improved predictive accuracy.
+
+XGBoost/LightGBM: Efficient and scalable implementations of gradient boosting.
+
+Neural Networks: Deep learning models for capturing complex patterns.
+
+Ensemble Methods: Combine multiple models to enhance performance.
+
+Hyperparameter Tuning: Optimize the parameters of these algorithms to achieve better results.
+
+### Enhance Word Embeddings
+Experiment with Embedding Techniques: Explore various word embedding algorithms to better capture semantic relationships in the data. Some options include:
+
+GloVe: Global Vectors for word representation.
+
+FastText: For capturing subword information.
+
+Domain-Specific Embeddings: Train embeddings on domain-specific corpora to better fit the nuances of different sectors.
+
+### Improve Data Quality and Preprocessing
+
+Data Cleaning: Implement more rigorous data cleaning techniques to handle missing values, outliers, and inconsistencies.
+
+Feature Engineering: Create more informative features that can enhance model performance.
+
+Data Augmentation: Use techniques like SMOTE (Synthetic Minority Over-sampling Technique) to handle imbalanced datasets.
+
+
+
