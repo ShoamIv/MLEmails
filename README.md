@@ -149,16 +149,19 @@ Given our high-dimensional data, SVM with a nonlinear kernel (such as RBF) can e
 
 ### Multi Class Logistic Regression
 <p align="center">
-  <img src="Figure/W2V_LG_loss.png" width="22.5%" style="display: inline-block;" />
-  <img src="Figure/BERT_LG_loss.png" width="22.5%" style="display: inline-block;" />
-  <img src="Figure/Word2Vec_Logistic_Regression_visualization.png" width="22.5%" style="display: inline-block;" /> 
-  <img src="Figure/BERT_Logistic_Regression_visualization.png" width="22.5%" style="display: inline-block;" />
-
+  <img src="Figure/W2V_LG_loss.png" width="45%" style="display: inline-block;" />
+  <img src="Figure/BERT_LG_loss.png" width="45%" style="display: inline-block;" />
 </p>
+
+<p align="center">
+ <img src="Figure/Word2Vec_Logistic_Regression_visualization.png" width="22.5%" style="display: inline-block;" /> 
+ <img src="Figure/BERT_Logistic_Regression_visualization.png" width="22.5%" style="display: inline-block;" />
+</p>
+
 
 Word2Vec_Logistic_Regression_visualization.png
 ### Random Forest
-perform 
+
 
 ### Support Vector Machine
 
