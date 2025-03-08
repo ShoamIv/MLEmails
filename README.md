@@ -18,7 +18,7 @@ The dataset was significantly reduced, dropping from 500,000 emails to 64,512. T
 After examination, we dropped 2 categories: It and  Archive and Miscellaneous folders, as they lacked semantic relevance, leaving us with the following folders as categories:
 personal, hr, meetings and scheduling, operations and logistics, projects,corporate and legal, finance.
 
-The final dataset for model training consisted of 16,769 emails.
+The final dataset for model training consisted of 14,081 emails.
 
 ### Emails were preprocessed by:
 
