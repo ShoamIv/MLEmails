@@ -175,7 +175,7 @@ Given our high-dimensional data, SVM with a nonlinear kernel (such as RBF) can e
 
 ### Support Vector Machine
 
-## Linear SVM
+#### Linear SVM
 
 <p align="center">
  <img src="Figure/W2V_SVM_confusion_matrix.png" width="45%" style="display: inline-block;" />
@@ -188,7 +188,7 @@ Given our high-dimensional data, SVM with a nonlinear kernel (such as RBF) can e
 </p>
 
 
-## SVM With RBF Kernel
+#### SVM With RBF Kernel
 
 <p align="center">
  <img src="Figure/RBFW2V_SVM_confusion_matrix.png" width="45%" style="display: inline-block;" />
