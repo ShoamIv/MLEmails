@@ -9,7 +9,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
 
-def train_random_forest(datastore_path, figure_folder, file, output, output_report):
+def train_random_forest(datastore_path, figure_folder, file, output, output_report, embedding):
+
     # Load the dataset
     df = pd.read_csv(f"{datastore_path}/{file}")
 
@@ -48,7 +49,7 @@ def train_random_forest(datastore_path, figure_folder, file, output, output_repo
     plt.figure(figsize=(16, 14))
     disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=class_names)
     disp.plot(cmap=plt.cm.Blues, xticks_rotation='vertical')
-    plt.title('Confusion Matrix for Random Forest')
+    plt.title(f'Confusion Matrix: {embedding} Random Forest')
     plt.savefig(os.path.join(figure_folder, output), bbox_inches="tight")
     plt.close()
 

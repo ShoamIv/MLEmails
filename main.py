@@ -13,52 +13,50 @@ def main():
     figure_folder = "Figure"
 
     print("Start processing the data...")
-    preprocess_data(datastore_path, figure_folder, )
+    #preprocess_data(datastore_path, figure_folder, )
 
     print("Initiating Word2Vec Embedding...")
-    initiate_word2vec(datastore_path, figure_folder)
+    #initiate_word2vec(datastore_path, figure_folder)
 
     file = "final_emails_50.csv"
 
     print("\nInitiating Word2Vec PCA and T-SNE...")
-    pca(datastore_path, figure_folder, file, "Word2Vec")
-    tsne(datastore_path, figure_folder, file, "T-SNE_Word2Vec.png")
+    #pca(datastore_path, figure_folder, file, "Word2Vec")
+    #tsne(datastore_path, figure_folder, file, "T-SNE_Word2Vec.png")
 
     # Algorithms run on Word2Vec
 
     print("\nRunning Logistic Regression on Word2Vec embeddings...")
-    train_logistic_regression(datastore_path, figure_folder, file, "W2V_LG_loss.png")
+    train_logistic_regression(datastore_path, figure_folder, file, "W2V_LG_loss.png", "W2V_LG_ClassificationReport.txt", "Word2Vec")
 
     print("\nRunning Random Forest on Word2Vec embeddings...")
-    train_random_forest(datastore_path, figure_folder, file, "W2V_RF_confusion_matrix.png",
-                        "W2VRF_classification_report.txt")
+    train_random_forest(datastore_path, figure_folder, file, "W2V_RF_confusion_matrix.png", "W2VRF_classification_report.txt","Word2Vec")
 
     print("\nRunning SVM on Word2Vec embeddings...")
-    train_SVM(datastore_path, figure_folder, file, "W2V_SVM_confusion_matrix.png", "W2VSVM_classification_report.txt", )
+    train_SVM(datastore_path, figure_folder, file, "W2V_SVM_confusion_matrix.png", "W2VSVM_classification_report.txt", "Word2Vec")
 
     # Update file to Bert.
     file = "final_emails_bert_embeddings.csv"
 
     print("\nInitiating BERT PCA and T-SNE...")
 
-    pca(datastore_path, figure_folder, file, "BERT")
-    tsne(datastore_path, figure_folder, file, "T-SNE_BERT.png")
+    #pca(datastore_path, figure_folder, file, "BERT")
+    #tsne(datastore_path, figure_folder, file, "T-SNE_BERT.png")
 
     # Bert model
     print("\nTraining On Bert Model...")
-    Run_BertEmbedding(datastore_path, figure_folder)
+    #Run_BertEmbedding(datastore_path, figure_folder)
 
     # Algorithms run on Bert
 
     print("\nRunning Logistic Regression on BERT embeddings...")
-    train_logistic_regression(datastore_path, figure_folder, file, "BERT_LG_loss.png")
+    train_logistic_regression(datastore_path, figure_folder, file, "BERT_LG_loss.png", "BERT_LG_ClassificationReport.txt", "BERT")
 
     print("\nRunning Random Forest on BERT embeddings...")
-    train_random_forest(datastore_path, figure_folder, file, "BERT_RF_confusion_matrix.png",
-                        "BERTRF_classification_report.txt")
+    train_random_forest(datastore_path, figure_folder, file, "BERT_RF_confusion_matrix.png", "BERTRF_classification_report.txt","BERT")
 
     print("\nRunning SVM on BERT embeddings...")
-    train_SVM(datastore_path, figure_folder, file, "BERT_SVM_confusion_matrix.png", "BERTSVM_classification_report.txt")
+    train_SVM(datastore_path, figure_folder, file, "BERT_SVM_confusion_matrix.png", "BERTSVM_classification_report.txt", "BERT")
 
 
 if __name__ == '__main__':

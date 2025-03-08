@@ -9,7 +9,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.svm import LinearSVC, SVC
 
 
-def train_SVM(datastore_path, figure_folder, file, output, output_report):
+def train_SVM(datastore_path, figure_folder, file, output, output_report, embedding):
 
     # Load your DataFrame here
     df = pd.read_csv(f"{datastore_path}/{file}")
@@ -52,8 +52,8 @@ def train_SVM(datastore_path, figure_folder, file, output, output_report):
     plt.figure(figsize=(16, 14))
     disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=class_names)
     disp.plot(cmap=plt.cm.Blues, xticks_rotation='vertical')
-    plt.title('Linear SVM Confusion Matrix')
-    plt.savefig(os.path.join(figure_folder,output), bbox_inches="tight")
+    plt.title(f'Confusion Matrix: {embedding} Linear SVM')
+    plt.savefig(os.path.join(figure_folder, output), bbox_inches="tight")
     plt.close()
     # Print the classification report
     print("Classification Report:")
@@ -83,7 +83,7 @@ def train_SVM(datastore_path, figure_folder, file, output, output_report):
     plt.figure(figsize=(16, 14))
     disp_rbf = ConfusionMatrixDisplay(confusion_matrix=cm_rbf, display_labels=class_names)
     disp_rbf.plot(cmap=plt.cm.Blues, xticks_rotation='vertical')
-    plt.title('RBF Kernel SVM Confusion Matrix')
+    plt.title(f'Confusion Matrix: {embedding} RBF Kernel SVM')
     plt.savefig(os.path.join(figure_folder, output), bbox_inches="tight")
     plt.close()
 
