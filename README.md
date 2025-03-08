@@ -117,11 +117,14 @@ Bar charts to visualize folder distributions before and after data cleaning.
 
 ## Key Findings & Impact
 
-Removing noisy folders improved classification accuracy by reducing ambiguity.
+add here how each performed with direction to the respected figure's
 
-Dimensionality reduction techniques helped in better feature extraction and model performance.
+### Multi Class Logistic Regression
 
-SVM RBF Kernel Model performed best among the classifiers, balancing accuracy and efficiency.
+### Random Forest
+
+### Support Vector Machine
+
 
 We observed that Word2Vec did not provide satisfactory separation or model results for our email categorization task. Upon further research, we discovered that Word2Vec generates word vectors in a way that does not always preserve the semantic meaning of words, especially in contexts where word order and deeper contextual understanding are crucial.
 
