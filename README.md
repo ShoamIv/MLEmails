@@ -142,6 +142,7 @@ Categorize Jobs: By integrating data from multiple sectors, we can better catego
 ### Integrate Advanced Algorithms
 Explore Complex Models: While we have utilized algorithms like Random Forest, DBSCAN, Logistic Regression (LG), and Support Vector Machines (SVM), there is potential to integrate more sophisticated models such as:
 
+Check GBM, XGBoost, hyperparameter!
 Gradient Boosting Machines (GBM): For improved predictive accuracy.
 
 XGBoost/LightGBM: Efficient and scalable implementations of gradient boosting.
