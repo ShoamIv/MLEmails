@@ -96,7 +96,6 @@ In contrast, more advanced algorithms, such as Random Forest, are better suited 
 
 
 ## Machine Learning Models Used
-
 To classify emails effectively, we experimented with multiple models:
 
 ### Multi Class Logistic Regression
