@@ -96,7 +96,7 @@ In contrast, more advanced algorithms, such as Random Forest, are better suited 
 
 To classify emails effectively, we experimented with multiple models:
 
-### Multi Class Logistic Regression Model
+### Multi Class Logistic Regression
 Applied to predict certain numerical properties of emails based on extracted features.
 
 ### Random Forest
