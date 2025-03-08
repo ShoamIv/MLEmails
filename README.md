@@ -51,19 +51,19 @@ These labels provide a structured framework for analysis, enabling us to derive 
 
 ### Why These Labels?
 
-Personal(numeric value 0): Emails related to individual or non-work-related communication.
+**Personal**(numeric value 0): Emails related to individual or non-work-related communication.
 
-HR(numeric value 1): Emails pertaining to recruitment, employee relations, and human resources management.
+**HR**(numeric value 1): Emails pertaining to recruitment, employee relations, and human resources management.
 
-Meetings and Scheduling(numeric value 2): Emails about meeting coordination, calendars, and scheduling.
+**Meetings and Scheduling**(numeric value 2): Emails about meeting coordination, calendars, and scheduling.
 
-Operations and Logistics(numeric value 3): Emails concerning supply chain, logistics, and operational workflows.
+**Operations and Logistics**(numeric value 3): Emails concerning supply chain, logistics, and operational workflows.
 
-Projects(numeric value 4): Emails tied to specific initiatives, project management, and collaborative efforts.
+**Projects**(numeric value 4): Emails tied to specific initiatives, project management, and collaborative efforts.
 
-Corporate and Legal(numeric value 5): Emails involving legal matters, compliance, and corporate governance.
+**Corporate and Legal**(numeric value 5): Emails involving legal matters, compliance, and corporate governance.
 
-Finance(numeric value 6): Emails related to budgeting, trading, and financial operations.
+**Finance**(numeric value 6): Emails related to budgeting, trading, and financial operations.
 
 By using these categories as labels, we ensure that our dataset is not only well-organized but also primed for advanced analytical tasks, such as predictive modeling and semantic analysis. This approach allows us to leverage the inherent structure of the data while maintaining its contextual richness.
 
