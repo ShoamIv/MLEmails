@@ -51,21 +51,22 @@ These labels provide a structured framework for analysis, enabling us to derive 
 
 ### Why These Labels?
 
-Personal: Emails related to individual or non-work-related communication.
+Personal(numeric value 0): Emails related to individual or non-work-related communication.
 
-Operations and Logistics: Emails concerning supply chain, logistics, and operational workflows.
+HR(numeric value 1): Emails pertaining to recruitment, employee relations, and human resources management.
 
-Corporate and Legal: Emails involving legal matters, compliance, and corporate governance.
+Meetings and Scheduling(numeric value 2): Emails about meeting coordination, calendars, and scheduling.
 
-Finance: Emails related to budgeting, trading, and financial operations.
+Operations and Logistics(numeric value 3): Emails concerning supply chain, logistics, and operational workflows.
 
-HR: Emails pertaining to recruitment, employee relations, and human resources management.
+Projects(numeric value 4): Emails tied to specific initiatives, project management, and collaborative efforts.
 
-Meetings and Scheduling: Emails about meeting coordination, calendars, and scheduling.
+Corporate and Legal(numeric value 5): Emails involving legal matters, compliance, and corporate governance.
 
-Projects: Emails tied to specific initiatives, project management, and collaborative efforts.
+Finance(numeric value 6): Emails related to budgeting, trading, and financial operations.
 
 By using these categories as labels, we ensure that our dataset is not only well-organized but also primed for advanced analytical tasks, such as predictive modeling and semantic analysis. This approach allows us to leverage the inherent structure of the data while maintaining its contextual richness.
+
 
 ## Features
 1.Content Length – The total length of the email body.
@@ -105,7 +106,7 @@ As we have observed, the t-SNE technique does not break the insights from the PC
 
 The t-SNE and PCA visualizations reveal the inherent complexity of our email embedding space. As we compare Word2Vec and BERT representations through both dimensionality reduction techniques, a clear pattern emerges. The data exhibits significant non-linear characteristics with intricate cluster structures that resist simple separation.
 
-BERT embeddings consistently demonstrate superior cluster formation compared to Word2Vec, with more defined boundaries between email categories. This is particularly evident in the t-SNE visualizations, where BERT's contextual understanding creates distinctive satellite clusters for category 2 (red) and clearer separation for other categories. 
+BERT embeddings consistently demonstrate superior cluster formation compared to Word2Vec, with more defined boundaries between email categories. This is particularly evident in the t-SNE visualizations, where BERT's contextual understanding creates distinctive satellite clusters and clearer separation for other categories. 
 
 Word2Vec, while showing some clustering tendencies, produces more overlapping distributions with less defined category boundaries.
 Model Selection Implications
