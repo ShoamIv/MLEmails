@@ -175,5 +175,6 @@ Feature Engineering: Create more informative features that can enhance model per
 
 
 ![PC![PCA_Word2Vec](https://github.com/user-attachments/assets/3d26574f-7e65-445f-80bd-c0e4ae473e5c)
-A_BERT](https://github.com/user-attachments/assets/f70cbd18-3797-48f1-b38a-a05df64bc376)
+
+![PCA_BERT](https://github.com/user-attachments/assets/7b2dd172-5943-4a2d-a9d2-0605edfd615f)
 
