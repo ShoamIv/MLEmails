@@ -78,16 +78,14 @@ By using these categories as labels, we ensure that our dataset is not only well
 
 For the last two features, we experimented with different embedding techniques. Initially, we used Word2Vec, but the results were not satisfactory. To improve performance, we turned to BERT (Bidirectional Encoder Representations from Transformers). The difference was significant, as demonstrated in the figures.
 
-## Visualizations
+## Data Visualizations
 
-To analyze and interpret the dataset, we used:
+<p align="center">
+  <img src="Figure/Word2Vec2DPCA.png" width="45%" style="display: inline-block;" />
+  <img src="Figure/BERT2DPCA.png" width="45%" style="display: inline-block;" />
+</p>
 
-Matplotlib for static visualizations.
-
-Seaborn for enhanced scatter plots.
-
-Bar charts to visualize folder distributions before and after data cleaning.
-
+as we can see 
 
 # Hypothesis
 Given that our data is not linearly separable and has high dimensionality due to the embeddings, simpler models like Logistic Regression may struggle to effectively classify the emails. These models often face difficulties when dealing with complex, high-dimensional feature spaces.
@@ -173,8 +171,5 @@ Data Cleaning: Implement more rigorous data cleaning techniques to handle missin
 
 Feature Engineering: Create more informative features that can enhance model performance.
 
-<p align="center">
-  <img src="Figure/Word2Vec2DPCA.png" width="45%" style="display: inline-block;" />
-  <img src="Figure/BERT2DPCA.png" width="45%" style="display: inline-block;" />
-</p>
+
 
