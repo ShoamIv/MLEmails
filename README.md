@@ -175,6 +175,33 @@ Given our high-dimensional data, SVM with a nonlinear kernel (such as RBF) can e
 
 ### Support Vector Machine
 
+## Linear SVM
+
+<p align="center">
+ <img src="Figure/W2V_SVM_confusion_matrix.png" width="45%" style="display: inline-block;" />
+ <img src="Figure/BERT_SVM_confusion_matrix.png" width="45%" style="display: inline-block;" /> 
+</p>
+
+<p align="center">
+ <img src="Figure/Word2Vec_SVM_visualization.png" width="45%" style="display: inline-block;" />
+ <img src="Figure/BERT_SVM_visualization.png" width="45%" style="display: inline-block;" />
+</p>
+
+
+## SVM With RBF Kernel
+
+<p align="center">
+ <img src="Figure/RBFW2V_SVM_confusion_matrix.png" width="45%" style="display: inline-block;" />
+ <img src="Figure/RBFBERT_SVM_confusion_matrix.png" width="45%" style="display: inline-block;" /> 
+</p>
+
+
+<p align="center">
+ <img src="Figure/RBF_Word2Vec_SVM_visualization.png" width="45%" style="display: inline-block;" />
+ <img src="Figure/RBF_BERT_SVM_visualization.png" width="45%" style="display: inline-block;" />
+</p>
+
+
 
 We observed that Word2Vec did not provide satisfactory separation or model results for our email categorization task. Upon further research, we discovered that Word2Vec generates word vectors in a way that does not always preserve the semantic meaning of words, especially in contexts where word order and deeper contextual understanding are crucial.
 
