@@ -202,10 +202,16 @@ Given our high-dimensional data, SVM with a nonlinear kernel (such as RBF) can e
 </p>
 
 
+### Accuarcy Comparision of all models
+<p align="center">
+<img src="Figure/model_accuracy_comparison.png" width="80%" style="display: inline-block;" />
+</p>
 
-We observed that Word2Vec did not provide satisfactory separation or model results for our email categorization task. Upon further research, we discovered that Word2Vec generates word vectors in a way that does not always preserve the semantic meaning of words, especially in contexts where word order and deeper contextual understanding are crucial.
 
-To address this, we transitioned to using BERT (Bidirectional Encoder Representations from Transformers) for vectorizing the email text. Unlike Word2Vec, BERT captures the contextual meaning of words by considering the entire sentence structure, resulting in richer and more semantically meaningful embeddings.
+
+## Conculsion:
+
+
 
 ## Future Improvements
 
