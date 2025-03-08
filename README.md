@@ -92,7 +92,7 @@ Bar charts to visualize folder distributions before and after data cleaning.
 # Hypothesis
 Given that our data is not linearly separable and has high dimensionality due to the embeddings, simpler models like Logistic Regression may struggle to effectively classify the emails. These models often face difficulties when dealing with complex, high-dimensional feature spaces.
 
-In contrast, more advanced algorithms, such as Random Forest, are better suited for handling large numbers of dimensions. Their ability to capture intricate patterns and relationships in the data makes them a more promising choice for our classification task. 
+In contrast, more advanced algorithms, such as SVM, are better suited for handling large numbers of dimensions. Their ability to capture intricate patterns and relationships in the data makes them a more promising choice for our classification task. 
 
 
 ## Machine Learning Models Used
