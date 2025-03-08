@@ -8,7 +8,6 @@ from nltk.corpus import stopwords
 from sklearn.manifold import TSNE
 import re
 
-
 # Load filtered emails
 def load_filtered_emails(datastore_path):
     return pd.read_csv(os.path.join(datastore_path, "filtered_emails.csv"))
@@ -46,24 +45,6 @@ def make_vector_rep_df(filtered_emails, word2vec_model):
     df = pd.DataFrame.from_dict(vectors_dict, orient='index')
     df.fillna(0, inplace=True)
     return df
-
-
-# Plot t-SNE visualization
-def plot_tsne(folder_embeddings, figure_folder):
-    tsne = TSNE(n_components=2, perplexity=5, random_state=42)
-    tsne_results = tsne.fit_transform(folder_embeddings)
-    tsne_df = pd.DataFrame(tsne_results, columns=["TSNE 1", "TSNE 2"], index=folder_embeddings.index)
-
-    plt.figure(figsize=(10, 8))
-    plt.scatter(tsne_df["TSNE 1"], tsne_df["TSNE 2"], color='skyblue', alpha=0.7)
-    for folder, (x, y) in tsne_df.iterrows():
-        plt.text(x, y, folder, fontsize=8, ha='right')
-    plt.xlabel("t-SNE Component 1")
-    plt.ylabel("t-SNE Component 2")
-    plt.title("t-SNE Projection of Folder Embeddings")
-    plt.grid(True)
-    plt.savefig(os.path.join(figure_folder, "TSNE"), bbox_inches="tight")
-
 
 # Clean and tokenize text
 def clean_and_tokenize_text(text, stop_words):
@@ -134,8 +115,7 @@ def process_and_save_final_data(filtered_emails, word2vec_model_body, word2vec_m
 def initiate_word2vec(datastore_path, figure_folder):
     filtered_emails = load_filtered_emails(datastore_path)
     print("Unique folders found:", filtered_emails['X-Folder'].unique())
-
     folder_embeddings, word2vec_model = train_folder_embeddings(filtered_emails, datastore_path)
-    plot_tsne(folder_embeddings, figure_folder)
     word2vec_model_body, word2vec_model_subject_50 = train_email_embeddings(filtered_emails, datastore_path)
     process_and_save_final_data(filtered_emails, word2vec_model_body, word2vec_model_subject_50, datastore_path)
+

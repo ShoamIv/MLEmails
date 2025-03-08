@@ -10,7 +10,7 @@ from sklearn.preprocessing import StandardScaler
 
 
 # Function to train Logistic Regression model
-def train_logistic_regression(datastore_path, figure_folder, file):
+def train_logistic_regression(datastore_path, figure_folder, file, output):
 
     # Load DataFrame here
     df = pd.read_csv(f"{datastore_path}/{file}")
@@ -63,5 +63,5 @@ def train_logistic_regression(datastore_path, figure_folder, file):
     ax.set_xlabel('Epochs')
     ax.set_ylabel('Loss')
     ax.legend()
-    plt.savefig(os.path.join(figure_folder, "LG_loss.png"), bbox_inches="tight")
+    plt.savefig(os.path.join(figure_folder, output), bbox_inches="tight")
     plt.close()

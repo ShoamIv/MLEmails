@@ -9,7 +9,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.svm import LinearSVC, SVC
 
 
-def train_SVM(datastore_path, figure_folder, file):
+def train_SVM(datastore_path, figure_folder, file, output, output_report):
 
     # Load your DataFrame here
     df = pd.read_csv(f"{datastore_path}/{file}")
@@ -28,7 +28,7 @@ def train_SVM(datastore_path, figure_folder, file):
 
     # Create and train the Linear SVM model
     print("Training Linear SVM model...")
-    svm = LinearSVC(max_iter=10000, random_state=42, dual=False, tol=0.0001)
+    svm = LinearSVC(max_iter=10000, dual=False, tol=0.0001)
     ova_classifier = OneVsRestClassifier(svm)
     ova_classifier.fit(X_train, y_train)
     print("Linear SVM model training completed")
@@ -42,38 +42,32 @@ def train_SVM(datastore_path, figure_folder, file):
     accuracy = accuracy_score(y_test, y_pred)
     print(f'Linear SVM Accuracy: {accuracy:.4f}')
 
-    # Create confusion matrix
+    # Confusion Matrix
+    folder_mapping = {"personal": 0, "hr": 1, "meetings and scheduling": 2, "operations and logistics": 3,
+                      "projects": 4, "corporate and legal": 5, "finance": 6}
+
+    class_names = [name for name, idx in sorted(folder_mapping.items(), key=lambda x: x[1])]
     cm = confusion_matrix(y_test, y_pred)
-
     # Plot the confusion matrix
-    plt.figure(figsize=(8, 6))
-    disp = ConfusionMatrixDisplay(confusion_matrix=cm)
-    disp.plot(cmap=plt.cm.Blues)
+    plt.figure(figsize=(16, 14))
+    disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=class_names)
+    disp.plot(cmap=plt.cm.Blues, xticks_rotation='vertical')
     plt.title('Linear SVM Confusion Matrix')
-    plt.savefig(os.path.join(figure_folder, "SVM_confusion_matrix.png"), bbox_inches="tight")
+    plt.savefig(os.path.join(figure_folder,output), bbox_inches="tight")
     plt.close()
-
     # Print the classification report
     print("Classification Report:")
     report = classification_report(y_test, y_pred)
     print(report)
 
     # Save classification report to a text file
-    with open(os.path.join(figure_folder, "SVM_classification_report.txt"), "w") as f:
+    with open(os.path.join(figure_folder, output_report), "w") as f:
         f.write(report)
 
-    # Plot the accuracy
-    plt.figure(figsize=(6, 4))
-    plt.bar(['Linear SVM'], [accuracy])
-    plt.ylim(0, 1)
-    plt.title('Linear SVM Model Accuracy')
-    plt.ylabel('Accuracy')
-    plt.savefig(os.path.join(figure_folder, "SVM_accuracy.png"), bbox_inches="tight")
-    plt.close()
-
     # Train RBF Kernel SVM
+    output = "RBF"+output
     print("Training RBF Kernel SVM model...")
-    svm_rbf = SVC(kernel='rbf', C=1, gamma='scale', random_state=42)
+    svm_rbf = SVC(kernel='rbf', C=1, gamma='scale')
     svm_rbf.fit(X_train, y_train)
     print("RBF Kernel SVM model training completed")
 
@@ -86,11 +80,11 @@ def train_SVM(datastore_path, figure_folder, file):
     cm_rbf = confusion_matrix(y_test, y_pred_rbf)
 
     # Plot the confusion matrix for RBF
-    plt.figure(figsize=(8, 6))
-    disp_rbf = ConfusionMatrixDisplay(confusion_matrix=cm_rbf)
-    disp_rbf.plot(cmap=plt.cm.Blues)
+    plt.figure(figsize=(16, 14))
+    disp_rbf = ConfusionMatrixDisplay(confusion_matrix=cm_rbf, display_labels=class_names)
+    disp_rbf.plot(cmap=plt.cm.Blues, xticks_rotation='vertical')
     plt.title('RBF Kernel SVM Confusion Matrix')
-    plt.savefig(os.path.join(figure_folder, "SVM_RBF_confusion_matrix.png"), bbox_inches="tight")
+    plt.savefig(os.path.join(figure_folder, output), bbox_inches="tight")
     plt.close()
 
     # Print the classification report for RBF
@@ -99,14 +93,8 @@ def train_SVM(datastore_path, figure_folder, file):
     print(report_rbf)
 
     # Save RBF classification report to a text file
-    with open(os.path.join(figure_folder, "SVM_RBF_classification_report.txt"), "w") as f:
+    output_report = "RBF" + output_report
+    with open(os.path.join(figure_folder, output_report), "w") as f:
         f.write(report_rbf)
 
-    # Compare both models
-    plt.figure(figsize=(6, 4))
-    plt.bar(['Linear SVM', 'RBF Kernel SVM'], [accuracy, accuracy_rbf])
-    plt.ylim(0, 1)
-    plt.title('SVM Models Accuracy Comparison')
-    plt.ylabel('Accuracy')
-    plt.savefig(os.path.join(figure_folder, "SVM_comparison.png"), bbox_inches="tight")
-    plt.close()
+
