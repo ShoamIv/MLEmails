@@ -46,6 +46,7 @@ def train_random_forest(datastore_path, figure_folder):
     plt.title('Confusion Matrix for Multi-Class Random Forest')
     plt.tight_layout()
     plt.savefig(os.path.join(figure_folder, "RF_confusion_matrix.png"), bbox_inches="tight")
+    plt.close()
 
     # Classification Report
     print("Classification Report:")
@@ -71,6 +72,7 @@ def train_random_forest(datastore_path, figure_folder):
     plt.title('Top 20 Important Features in Random Forest')
     plt.tight_layout()
     plt.savefig(os.path.join(figure_folder, "RF_feature_importance.png"), bbox_inches="tight")
+    plt.close()
 
     # Plot accuracy
     plt.figure(figsize=(6, 4))
@@ -79,6 +81,7 @@ def train_random_forest(datastore_path, figure_folder):
     plt.title('Random Forest Model Accuracy')
     plt.ylabel('Accuracy')
     plt.savefig(os.path.join(figure_folder, "RF_accuracy.png"), bbox_inches="tight")
+    plt.close()
 
     # Standardize data for visualizations
     scaler = StandardScaler()
@@ -100,6 +103,7 @@ def train_random_forest(datastore_path, figure_folder):
     plt.legend(title="Label")
     plt.grid(True)
     plt.savefig(os.path.join(figure_folder, "RF_PCA_sns.png"), bbox_inches="tight")
+    plt.close()
 
     # Apply PCA for dimensionality reduction (50 components)
     pca = PCA(n_components=50, random_state=42)
@@ -125,5 +129,6 @@ def train_random_forest(datastore_path, figure_folder):
     plt.legend(title="Email Category")
     plt.grid(True)
     plt.savefig(os.path.join(figure_folder, "RF_t-SNE.png"), bbox_inches="tight")
+    plt.close()
 
     return rf_model
