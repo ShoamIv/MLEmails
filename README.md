@@ -150,8 +150,8 @@ Given our high-dimensional data, SVM with a nonlinear kernel (such as RBF) can e
 ### Multi Class Logistic Regression
 
 <p align="center">
-  <img src="Figure/W2V_LG_loss.png" width="45%" style="display: inline-block;" />
-  <img src="Figure/BERT_LG_loss.png" width="45%" style="display: inline-block;" />
+  <img src="Figure/W2V_LG_loss.png" width="40%" style="display: inline-block;" />
+  <img src="Figure/BERT_LG_loss.png" width="40%" style="display: inline-block;" />
 </p>
 
 <p align="center">
