@@ -104,10 +104,18 @@ As we have observed, the t-SNE technique does not break the insights from the PC
 # Hypothesis
 
 The t-SNE and PCA visualizations reveal the inherent complexity of our email embedding space. As we compare Word2Vec and BERT representations through both dimensionality reduction techniques, a clear pattern emerges. The data exhibits significant non-linear characteristics with intricate cluster structures that resist simple separation.
-BERT embeddings consistently demonstrate superior cluster formation compared to Word2Vec, with more defined boundaries between email categories. This is particularly evident in the t-SNE visualizations, where BERT's contextual understanding creates distinctive satellite clusters for category 2 (red) and clearer separation for other categories. Word2Vec, while showing some clustering tendencies, produces more overlapping distributions with less defined category boundaries.
+
+BERT embeddings consistently demonstrate superior cluster formation compared to Word2Vec, with more defined boundaries between email categories. This is particularly evident in the t-SNE visualizations, where BERT's contextual understanding creates distinctive satellite clusters for category 2 (red) and clearer separation for other categories. 
+
+Word2Vec, while showing some clustering tendencies, produces more overlapping distributions with less defined category boundaries.
 Model Selection Implications
-Given the non-linear separability and high dimensionality of these embeddings, simpler models like Logistic Regression would indeed struggle to establish effective decision boundaries. The complex interrelationships between data points require algorithms capable of modeling non-linear patterns across multiple dimensions.
-SVM with RBF kernel stands as a more promising approach, as it can project the data into higher-dimensional spaces to find separation planes invisible in the original feature space. Its ability to capture intricate patterns makes it well-suited for classifying the semantically rich representations that BERT produces.
+Given the non-linear separability and high dimensionality of these embeddings, simpler models like Logistic Regression would indeed struggle to establish effective decision boundaries. 
+
+The complex interrelationships between data points require algorithms capable of modeling non-linear patterns across multiple dimensions.
+SVM with RBF kernel stands as a more promising approach, as it can project the data into higher-dimensional spaces to find separation planes invisible in the original feature space.
+
+Its ability to capture intricate patterns makes it well-suited for classifying the semantically rich representations that BERT produces.
+
 These visualizations strongly suggest that leveraging BERT embeddings with non-linear classifiers would yield the most effective email categorization system, capitalizing on both the quality of the representation and the classifier's ability to establish appropriate decision boundaries in complex feature spaces
 
 
