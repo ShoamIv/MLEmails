@@ -96,11 +96,11 @@ In contrast, more advanced algorithms, such as Random Forest, are better suited 
 
 To classify emails effectively, we experimented with multiple models:
 
-### Random Forest
-Used for classification tasks due to its robustness against overfitting and high interpretability.
-
 ### Multi Class Regression Model
 Applied to predict certain numerical properties of emails based on extracted features.
+
+### Random Forest
+Used for classification tasks due to its robustness against overfitting and high interpretability.
 
 ### Support Vector Machine
 Used soft SVM as the soft SVM more robust to noisy data such our own.
