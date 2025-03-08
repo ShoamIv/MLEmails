@@ -96,10 +96,10 @@ The addition of a third dimension in PCA visualization further highlights the di
 
 <p align="center">
   <img src="Figure/T-SNE_Word2Vec.png" width="45%" style="display: inline-block;" />
-  <img src="Figure/T-SNE_BERT" width="45%" style="display: inline-block;" />
+  <img src="Figure/T-SNE_BERT.png" width="45%" style="display: inline-block;" />
 </p>
 
-As we have observed, the t-SNE technique does not break the assumptions we initially built from the PCA analysis; instead, it reinforces them.
+As we have observed, the t-SNE technique does not break the insights from the PCA analysis; instead, it reinforces them.
 
 # Hypothesis
 Given that our data is not linearly separable and has high dimensionality due to the embeddings, simpler models like Logistic Regression may struggle to effectively classify the emails. These models often face difficulties when dealing with complex, high-dimensional feature spaces.
