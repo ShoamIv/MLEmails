@@ -132,7 +132,6 @@ def process_and_save_final_data(filtered_emails, word2vec_model_body, word2vec_m
 
 # Main function to execute second stage
 def Run_SecondStage(datastore_path, figure_folder):
-
     filtered_emails = load_filtered_emails(datastore_path)
     print("Unique folders found:", filtered_emails['X-Folder'].unique())
 
