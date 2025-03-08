@@ -55,6 +55,5 @@ def pca(datastore_path, figure_folder, file, output):
     ax.set_zlabel("Principal Component 3")
     ax.legend(title="Label")
 
-    output = "3D"+output
     plt.savefig(os.path.join(figure_folder, output+"3DPCA.png"), bbox_inches="tight")
     plt.close()
