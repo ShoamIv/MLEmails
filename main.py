@@ -40,6 +40,7 @@ def main():
     file = "final_emails_bert_embeddings.csv"
 
     print("\nInitiating BERT PCA and T-SNE...")
+
     pca(datastore_path, figure_folder, file, "BERT")
     tsne(datastore_path, figure_folder, file, "T-SNE_BERT.png")
 
