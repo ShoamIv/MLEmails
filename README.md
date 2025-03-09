@@ -69,13 +69,13 @@ By using these categories as labels, we ensure that our dataset is not only well
 
 
 ## Features
-1.Content Length – The total length of the email body.
+1.**Content Length** – The total length of the email body.
 
-2.Number of Recipients – The count of recipients in the email.
+2.**Number of Recipients** – The count of recipients in the email.
 
-3.Email Subject Embedding – A numerical representation of the email subject.
+3.**Email Subject Embedding** – A numerical representation of the email subject.
 
-4.Email Body Embedding – A numerical representation of the email body.
+4.**Email Body Embedding** – A numerical representation of the email body.
 
 For the last two features, we experimented with different embedding techniques. Initially, we used Word2Vec, but the results were not satisfactory. To improve performance, we turned to BERT (Bidirectional Encoder Representations from Transformers). The difference was significant, as demonstrated in the figures.
 
@@ -241,18 +241,20 @@ This research provides a foundation for developing more sophisticated email mana
 
 Our current reliance on the Enron dataset, while valuable, limits our model's exposure to primarily corporate communications from a single company culture. To build a more robust and generalizable email classification system, we recommend:
 
-Expand Domain Coverage: Incorporate email data from diverse organizational environments:
+**Expand Domain Coverage**: Incorporate email data from diverse organizational environments:
 
 Academic institutions: Faculty communications, research collaborations, and administrative correspondence
+
 Healthcare organizations: Professional medical communications while maintaining strict privacy compliance
+
 Public sector: Government agencies and public service communications.
 
 Technology firms: Technical discussions and project management from different technology cultures
 Non-profit organizations: Mission-driven communications with different priorities and workflows
 
-Enhance Category Representation: With broader data sources, we can develop more nuanced and universally applicable category definitions that accurately reflect communication patterns across industries.
+**Enhance Category Representation**: With broader data sources, we can develop more nuanced and universally applicable category definitions that accurately reflect communication patterns across industries.
 
-Temporal Diversity: Include more recent email data to capture evolving communication styles, modern terminology, and contemporary workplace practices that might differ significantly from the early 2000s Enron dataset.
+**Temporal Diversity**: Include more recent email data to capture evolving communication styles, modern terminology, and contemporary workplace practices that might differ significantly from the early 2000s Enron dataset.
 
 ### Integrate Advanced Algorithms
 
