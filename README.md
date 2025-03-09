@@ -5,6 +5,15 @@ This project aims to provide a gateway to a more effective solution for email ca
 
 In particular, within the work category, we aim to further refine classification by organizing emails into specific, meaningful subcategories. Using the Enron dataset as our foundation, we focus on developing a structured approach to classify work-related emails into distinct and relevant categories, enhancing both accessibility and efficiency in email management.
 
+## Setup Instructions
+
+To run this project, follow these steps:
+
+1. **Clone the repository** and navigate into the project folder.  
+2. **Download the dataset** from [this link](https://drive.google.com/file/d/1EFNkUdb5xn3rF1gaxctTjpUybhtUYt07/view?usp=sharing) and place it in the main project folder.  
+
+   The folder structure should look like this:  
+
 ## Dataset & Preprocessing
 
 The dataset initially contained approximately 500,000 emails, stored in various folders that served as initial labels. However, we identified that some folders lacked clear semantic focus, leading to inconsistent labeling and dataset imbalance. To improve data quality:
