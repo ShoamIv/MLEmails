@@ -12,7 +12,14 @@ To run this project, follow these steps:
 1. **Clone the repository** and navigate into the project folder.  
 2. **Download the dataset** from [this link](https://drive.google.com/file/d/1EFNkUdb5xn3rF1gaxctTjpUybhtUYt07/view?usp=sharing) and place it in the main project folder.  
 
-   The folder structure should look like this:  
+   The folder structure should look like this:
+
+   MLEmails/
+   ├── Figure/
+   ├── BertEmbedding.py
+   ├── Create_Word2Vec.py
+   ├── DataProcessing.py
+   ├── emails.csv # Place the downloaded file here
 
 ## Dataset & Preprocessing
 
