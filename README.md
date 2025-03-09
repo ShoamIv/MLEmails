@@ -136,7 +136,7 @@ Multi-class Logistic Regression is expected to underperform compared to other mo
 
 ### Random Forest
 
-Random Forest is expected to perform well due to its ability to handle high-dimensional data and capture complex decision boundaries. By aggregating multiple decision trees, it reduces overfitting and improves generalization. Additionally, its ensemble nature helps mitigate the impact of noisy or overlapping data, making it a strong candidate for classification in our dataset.
+Random Forest is expected to perform well due to its robustness to overfitting and capture complex decision boundaries. By aggregating multiple decision trees, it reduces overfitting and improves generalization. Additionally, its ensemble nature helps mitigate the impact of noisy or overlapping data, making it a strong candidate for classification in our dataset.
 
 ### Support Vector Machine
 
@@ -175,6 +175,8 @@ Comparing the training loss curves, Word2Vec plateaus at a significantly higher 
  <img src="Figure/BERT_Random_Forest_visualization.png" width="45%" style="display: inline-block;" />
 </p>
 
+The data reveals a clear relationship between embedding quality and classifier effectiveness. Random Forest performed best with Word2Vec (73% accuracy), leveraging its ensemble approach, but was outperformed by RBF SVM (87%) and Logistic Regression (83%) with BERT embeddings. This suggests BERT's rich contextual features favor linear or kernel-based methods over tree-based approaches. While Random Forest benefits from improved embeddings, it still struggles with certain nuanced distinctions, which kernel methods like RBF SVM handle more effectively. Overall, as embeddings improve, the classifier's ability to leverage that richness becomes the key factor in performance.
+
 
 ### Support Vector Machine
 
@@ -190,6 +192,8 @@ Comparing the training loss curves, Word2Vec plateaus at a significantly higher 
  <img src="Figure/BERT_SVM_visualization.png" width="45%" style="display: inline-block;" />
 </p>
 
+The Linear SVM performed poorly on both Word2Vec and BERT embeddings, struggling to capture the complexity of the classification task. However, as observed earlier, the BERT-based model still outperformed its Word2Vec counterpart, reinforcing the idea that high-quality embeddings significantly impact model effectiveness. While SVMs can be powerful in well-structured feature spaces, their linear decision boundaries likely struggled to separate the nuanced relationships within the dataset, particularly when using weaker Word2Vec representations.
+
 
 #### SVM With RBF Kernel
 
@@ -204,6 +208,7 @@ Comparing the training loss curves, Word2Vec plateaus at a significantly higher 
  <img src="Figure/RBF_BERT_SVM_visualization.png" width="45%" style="display: inline-block;" />
 </p>
 
+The RBF kernel SVM emerged as the top-performing model with BERT embeddings, surpassing all others, and delivered strong results even with Word2Vec, outperforming nearly every alternative. This highlights the power of the RBF kernel in capturing complex, non-linear relationships that simpler models, like Linear SVM or Logistic Regression, struggle with. Unlike linear models, which rely on straight decision boundaries, the RBF kernel maps data into a higher-dimensional space, allowing it to better separate intricate patterns within the dataset. Its success across both embedding types emphasizes the crucial role of kernel methods in enhancing classification performance, particularly when dealing with high-dimensional, text-based data.
 
 ### Accuarcy Comparision of all models
 <p align="center">
@@ -214,27 +219,45 @@ Comparing the training loss curves, Word2Vec plateaus at a significantly higher 
 
 ## Conculsion:
 
+Based on the comprehensive analysis and experimental results presented in this email classification project, we can draw several significant conclusions:
+
+1.**Embedding Quality is Paramount**: BERT embeddings consistently outperformed Word2Vec across all classifier types, demonstrating that high-quality contextual embeddings are fundamental to effective email classification. The superior clustering and separation visible in both PCA and t-SNE visualizations translated directly to better classification performance.
+
+2.**The Critical Interplay Between Embeddings and Classifiers**: Different classifiers leveraged embedding quality differently. While Random Forest performed best with Word2Vec embeddings (73% accuracy), it was surpassed by both RBF SVM (87%) and even Logistic Regression (83%) when using BERT embeddings. This suggests that as embedding quality improves, the classifier's ability to utilize that richness becomes the limiting factor.
+
+3.**Non-linear Methods Excel**: The RBF kernel SVM emerged as the standout performer, achieving 87% accuracy with BERT embeddings. Its ability to map data into higher-dimensional spaces and establish complex decision boundaries proved ideal for capturing the nuanced semantic relationships in email content.
+Challenging Categories Persist: As hypothesized, the "Personal" category remained challenging to classify cleanly, with significant overlap with other categories. Similarly, the "Projects" category showed consistently lower performance across models, likely due to its diverse and overlapping content with other work-related categories.
+
+4.**Beyond Linear Boundaries**: The initial hypothesis that Logistic Regression would struggle due to non-linear separability was partially supported. While it performed poorly with Word2Vec (66%), it surprisingly excelled with BERT embeddings (83%), indicating that high-quality embeddings can sometimes compensate for model limitations.
+
+5.**Practical Applications**: The project demonstrates that effective email categorization into meaningful work-related subcategories is achievable with modern NLP techniques, particularly when using contextual embeddings like BERT combined with appropriate classification algorithms.
+
+This research provides a foundation for developing more sophisticated email management systems that can automatically organize messages into semantically meaningful categories, ultimately enhancing productivity and information accessibility in professional environments.
 
 
 ## Future Improvements
 
 ### Diversify Data Sources
-Expand Data Collection: Currently, we rely on the Ernon dataset, which primarily consists of business corporate data. To achieve a more comprehensive understanding, we should incorporate data from various sectors such as:
 
-Universities: Academic and research data.
+Our current reliance on the Enron dataset, while valuable, limits our model's exposure to primarily corporate communications from a single company culture. To build a more robust and generalizable email classification system, we recommend:
 
-Hospitals: Healthcare and medical records.
+Expand Domain Coverage: Incorporate email data from diverse organizational environments:
 
-Construction: Infrastructure and project-related data.
+Academic institutions: Faculty communications, research collaborations, and administrative correspondence
+Healthcare organizations: Professional medical communications while maintaining strict privacy compliance
+Public sector: Government agencies and public service communications.
 
-Other Fields: Include data from retail, technology, agriculture, and more.
+Technology firms: Technical discussions and project management from different technology cultures
+Non-profit organizations: Mission-driven communications with different priorities and workflows
 
-Categorize Jobs: By integrating data from multiple sectors, we can better categorize and analyze job roles across different industries.
+Enhance Category Representation: With broader data sources, we can develop more nuanced and universally applicable category definitions that accurately reflect communication patterns across industries.
+
+Temporal Diversity: Include more recent email data to capture evolving communication styles, modern terminology, and contemporary workplace practices that might differ significantly from the early 2000s Enron dataset.
 
 ### Integrate Advanced Algorithms
+
 Explore Complex Models: While we have utilized algorithms like Random Forest, DBSCAN, Logistic Regression (LG), and Support Vector Machines (SVM), there is potential to integrate more sophisticated models such as:
 
-Check GBM, XGBoost, hyperparameter!
 Gradient Boosting Machines (GBM): For improved predictive accuracy.
 
 XGBoost/LightGBM: Efficient and scalable implementations of gradient boosting.
