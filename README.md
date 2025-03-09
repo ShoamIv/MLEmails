@@ -150,15 +150,18 @@ Given our high-dimensional data, SVM with a nonlinear kernel (such as RBF) can e
 ### Multi Class Logistic Regression
 
 <p align="center">
-  <img src="Figure/W2V_LG_loss.png" width="45%" style="display: inline-block;" />
-  <img src="Figure/BERT_LG_loss.png" width="45%" style="display: inline-block;" />
-</p>
-
-<p align="center">
  <img src="Figure/Word2Vec_Logistic_Regression_visualization.png" width="45%" style="display: inline-block;" /> 
  <img src="Figure/BERT_Logistic_Regression_visualization.png" width="45%" style="display: inline-block;" />
 </p>
 
+Logistic Regression performed surprisingly well with BERT embeddings, achieving 83% accuracy—outperforming even BERT-based Random Forest (80%). This suggests that despite its linear nature, Logistic Regression can still be effective when paired with high-quality embeddings. However, its performance dropped significantly with Word2Vec (66%), highlighting the importance of embedding choice. The results indicate that while Logistic Regression struggles with complex decision boundaries, strong feature representations can still enhance its effectiveness.
+
+<p align="center">
+  <img src="Figure/W2V_LG_loss.png" width="45%" style="display: inline-block;" />
+  <img src="Figure/BERT_LG_loss.png" width="45%" style="display: inline-block;" />
+</p>
+
+Comparing the training loss curves, Word2Vec plateaus at a significantly higher value (around 0.95) than BERT (around 0.3), indicating BERT's superior ability to minimize error on the training data. While Word2Vec shows a steady but limited decrease in loss that flattens early, BERT demonstrates a steeper initial decline followed by continued improvement throughout training, reflecting its more powerful representational capacity to capture complex linguistic patterns in the text data that Word2Vec cannot effectively model.
 
 ### Random Forest
 
