@@ -21,6 +21,7 @@ To run this project, follow these steps:
    ├── Create_Word2Vec.py
    ├── DataProcessing.py
    ├── emails.csv # Place the downloaded file here
+   ...
    ```
 
 ## Dataset & Preprocessing
