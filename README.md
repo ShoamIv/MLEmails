@@ -14,12 +14,14 @@ To run this project, follow these steps:
 
    The folder structure should look like this:
 
+   ```
    MLEmails/
    ├── Figure/
    ├── BertEmbedding.py
    ├── Create_Word2Vec.py
    ├── DataProcessing.py
    ├── emails.csv # Place the downloaded file here
+   ```
 
 ## Dataset & Preprocessing
 
