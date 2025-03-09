@@ -33,19 +33,19 @@ Owing to the fact that the emails in Enron dataset(emails.csv) are already organ
 This approach not only preserved the organizational structure of the emails but also allowed us to leverage the semantic meaning embedded in the folder names, providing a robust foundation for our machine learning pipeline.
 The final categories, which now serve as our labels, are as follows:
 
-1.Personal
+Personal
 
-2.Operations and Logistics
+HR
 
-3.Corporate and Legal
+Meetings and Scheduling
 
-4.Finance
+Operations and Logistics
 
-5.HR
+Projects
 
-6.Meetings and Scheduling
+Corporate and Legal
 
-7.Projects
+Finance
 
 These labels provide a structured framework for analysis, enabling us to derive actionable insights and build robust machine learning models. Each of the 14,081 emails was assigned to one of these categories, ensuring that every email is associated with a clear and meaningful label. These labels not only reflect the content and context of the emails but also serve as the foundation for supervised learning tasks, such as classification and clustering.
 
